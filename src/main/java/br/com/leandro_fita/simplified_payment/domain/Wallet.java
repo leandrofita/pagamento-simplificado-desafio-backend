@@ -18,12 +18,8 @@ public class Wallet {
     private Long id;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "use_cd_id")
-    private User user;
-
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "sto_cd_id")
-    private Store store;
+    @JoinColumn(name = "wo_cd_id", nullable = false, unique = true)
+    private WalletOwner owner;
 
     @Column(name = "wal_num_balance")
     private Double balance;

@@ -35,9 +35,11 @@ public class User {
     @Column(name = "use_dat_updated_at", nullable = false)
     private OffsetDateTime updatedAt;
 
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "wo_cd_id", nullable = false, unique = true)
+    private WalletOwner walletOwner;
+
     @OneToMany(mappedBy = "user")
     private Set<Store> stores;
 
-    @OneToOne(mappedBy = "user")
-    private Wallet wallet;
 }

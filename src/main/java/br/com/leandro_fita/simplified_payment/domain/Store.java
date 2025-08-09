@@ -39,6 +39,7 @@ public class Store {
     @Column(name = "sto_dat_updated_at", nullable = false)
     private OffsetDateTime updatedAt;
 
-    @OneToOne(mappedBy = "store")
-    private Wallet wallet;
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "wo_cd_id", nullable = false, unique = true)
+    private WalletOwner walletOwner;
 }
