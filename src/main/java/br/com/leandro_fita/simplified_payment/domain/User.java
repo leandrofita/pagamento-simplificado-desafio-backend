@@ -36,9 +36,6 @@ public class User {
     private OffsetDateTime updatedAt;
 
     @OneToMany(mappedBy = "user")
-    private Set<UserProfile> profiles;
-
-    @OneToMany(mappedBy = "user")
     private Set<Store> stores;
 
     @OneToOne(mappedBy = "user")
