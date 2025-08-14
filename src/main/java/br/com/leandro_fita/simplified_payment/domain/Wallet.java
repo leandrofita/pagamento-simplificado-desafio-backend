@@ -9,7 +9,7 @@ import java.time.OffsetDateTime;
 
 @Data
 @NoArgsConstructor
-@Entity(name = "wallet")
+@Entity(name = "wallets")
 public class Wallet {
 
     @Id

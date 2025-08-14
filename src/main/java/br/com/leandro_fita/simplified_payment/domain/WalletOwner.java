@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @Data
-@Entity(name = "wallet_owner")
+@Entity(name = "wallet_owners")
 public class WalletOwner {
 
     @Id
@@ -16,5 +16,6 @@ public class WalletOwner {
     private Long id;
 
     @Column(name = "wo_txt_type", nullable = false)
+    @Enumerated(EnumType.STRING)
     private OwnerType ownerType;
 }

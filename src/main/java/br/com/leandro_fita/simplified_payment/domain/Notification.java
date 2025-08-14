@@ -10,7 +10,8 @@ import java.time.OffsetDateTime;
 
 @Data
 @NoArgsConstructor
-@Entity(name = "notification")
+@Entity
+@Table(name = "notifications")
 public class Notification {
 
     @Id
@@ -29,5 +30,6 @@ public class Notification {
     private Transaction transaction;
 
     @CreationTimestamp
+    @Column(name = "not_dt_sent_at", nullable = false)
     private OffsetDateTime sentAt;
 }

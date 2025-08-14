@@ -3,13 +3,15 @@ package br.com.leandro_fita.simplified_payment.domain;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.OffsetDateTime;
 import java.util.Set;
 
 @Data
 @NoArgsConstructor
-@Entity(name = "user")
+@Entity(name = "users")
 public class User {
 
     @Id
@@ -30,9 +32,11 @@ public class User {
     private String cpf;
 
     @Column(name = "use_dat_created_at", nullable = false)
+    @CreationTimestamp
     private OffsetDateTime createdAt;
 
     @Column(name = "use_dat_updated_at", nullable = false)
+    @UpdateTimestamp
     private OffsetDateTime updatedAt;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
